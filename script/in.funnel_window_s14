@@ -1,0 +1,61 @@
+
+# LAMMPS Input - Funnel Statistical Run
+units           real
+atom_style      full
+boundary        p p p 
+pair_style      lj/cut/coul/cut 10.0 10.0
+dielectric      78.0
+
+lattice         fcc 4.0
+region          entire block -200 200 -200 200 -600 600 units box
+create_box      2 entire
+
+region          res_left    block -150 150 -150 150 -450  -40 units box
+region          res_right   block -150 150 -150 150   40  450 units box
+region          pore_hole   cone z 0 0 60 8 -60 60 units box
+region          allowed     union 3 res_left res_right pore_hole
+
+region          track_left  block -150 150 -150 150 -450 -70 units box
+region          track_right block -150 150 -150 150   70  450 units box
+
+region          spawn_left  block -140 140 -140 140 -400  -70 units box
+region          spawn_right block -140 140 -140 140   70  400 units box
+
+create_atoms    1 random 400 66666 spawn_left
+create_atoms    2 random 400 66667 spawn_left
+create_atoms    1 random 400 66668 spawn_right
+create_atoms    2 random 400 66669 spawn_right
+
+group           na_type      type 1
+group           cl_type      type 2
+group           hot_atoms    region res_left
+group           cold_atoms   region res_right
+
+mass            1 23.0
+mass            2 35.5
+set             type 1 charge 1.0
+set             type 2 charge -1.0
+
+pair_coeff      1 1 0.1 3.2
+pair_coeff      1 2 0.1 3.0
+pair_coeff      2 2 0.1 3.5
+
+fix             w_all all wall/region allowed lj126 200.0 1.0 1.12
+velocity        all create 300.0 66670
+neighbor        2.0 bin
+neigh_modify    delay 0 every 1 check yes
+minimize        1.0e-4 1.0e-6 100 1000
+
+fix             lang_left  hot_atoms  langevin 300.0 300.0 100.0 66671
+fix             lang_right cold_atoms langevin 300.0 300.0 100.0 66672
+fix             1 all nve
+
+variable        n_na_l  equal count(na_type,track_left)
+variable        n_cl_l  equal count(cl_type,track_left)
+variable        n_na_r  equal count(na_type,track_right)
+variable        n_cl_r  equal count(cl_type,track_right)
+
+fix             ave_n all ave/time 1 1 5000 v_n_na_l v_n_cl_l v_n_na_r v_n_cl_r file results/data.funnel_window_s14.dat
+
+timestep        0.25
+run             800000

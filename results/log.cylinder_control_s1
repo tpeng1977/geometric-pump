@@ -1,0 +1,118 @@
+LAMMPS (22 Jul 2025 - Update 3)
+Lattice spacing in x,y,z = 4 4 4
+Created orthogonal box = (-200 -200 -600) to (200 200 600)
+  1 by 1 by 1 MPI processor grid
+Created 400 atoms
+  using lattice units in orthogonal box = (-200 -200 -600) to (200 200 600)
+  create_atoms CPU = 0.000 seconds
+Created 400 atoms
+  using lattice units in orthogonal box = (-200 -200 -600) to (200 200 600)
+  create_atoms CPU = 0.000 seconds
+Created 400 atoms
+  using lattice units in orthogonal box = (-200 -200 -600) to (200 200 600)
+  create_atoms CPU = 0.000 seconds
+Created 400 atoms
+  using lattice units in orthogonal box = (-200 -200 -600) to (200 200 600)
+  create_atoms CPU = 0.000 seconds
+800 atoms in group na_type
+800 atoms in group cl_type
+800 atoms in group hot_atoms
+800 atoms in group cold_atoms
+Setting atom values ...
+  800 settings made for charge
+Setting atom values ...
+  800 settings made for charge
+Generated 0 of 1 mixed pair_coeff terms from geometric mixing rule
+Neighbor list info ...
+  update: every = 1 steps, delay = 0 steps, check = yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 12
+  ghost atom cutoff = 12
+  binsize = 6, bins = 67 67 200
+  1 neighbor lists, perpetual/occasional/extra = 1 0 0
+  (1) pair lj/cut/coul/cut, perpetual
+      attributes: half, newton on
+      pair build: half/bin/newton
+      stencil: half/bin/3d
+      bin: standard
+Setting up cg style minimization ...
+  Unit style    : real
+  Current step  : 0
+Per MPI rank memory allocation (min/avg/max) = 11.26 | 11.26 | 11.26 Mbytes
+   Step          Temp          E_pair         E_mol          TotEng         Press     
+         0   300            2187.4847      0              3617.3793      3.4894896    
+        46   300           -27.027735      0              1402.8668      0.33959035   
+Loop time of 0.0120161 on 1 procs for 46 steps with 1600 atoms
+
+93.8% CPU use with 1 MPI tasks x no OpenMP threads
+
+Minimization stats:
+  Stopping criterion = energy tolerance
+  Energy initial, next-to-last, final = 
+      2187.48472154439  -27.0259235645464  -27.0277354489852
+  Force two-norm initial, final = 21042.409 1.2542758
+  Force max component initial, final = 11997.308 0.33941702
+  Final line search alpha, max atom move = 0.0011513753 0.00039079638
+  Iterations, force evaluations = 46 63
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 0.00055779 | 0.00055779 | 0.00055779 |   0.0 |  4.64
+Bond    | 2.67e-06   | 2.67e-06   | 2.67e-06   |   0.0 |  0.02
+Neigh   | 0.0025154  | 0.0025154  | 0.0025154  |   0.0 | 20.93
+Comm    | 4.9744e-05 | 4.9744e-05 | 4.9744e-05 |   0.0 |  0.41
+Output  | 0          | 0          | 0          |   0.0 |  0.00
+Modify  | 0.0055918  | 0.0055918  | 0.0055918  |   0.0 | 46.54
+Other   |            | 0.003299   |            |       | 27.45
+
+Nlocal:           1600 ave        1600 max        1600 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Nghost:              0 ave           0 max           0 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Neighs:            185 ave         185 max         185 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+
+Total # of neighbors = 185
+Ave neighs/atom = 0.115625
+Ave special neighs/atom = 0
+Neighbor list builds = 3
+Dangerous builds = 0
+Generated 0 of 1 mixed pair_coeff terms from geometric mixing rule
+Setting up Verlet run ...
+  Unit style    : real
+  Current step  : 46
+  Time step     : 0.25
+Per MPI rank memory allocation (min/avg/max) = 10.14 | 10.14 | 10.14 Mbytes
+   Step          Temp          E_pair         E_mol          TotEng         Press     
+        46   300           -27.027735      0              1402.8668      0.33959035   
+   2000046   298.04366     -14.690803      0              1405.8792      0.33994925   
+Loop time of 317.949 on 1 procs for 2000000 steps with 1600 atoms
+
+Performance: 135.871 ns/day, 0.177 hours/ns, 6290.312 timesteps/s, 10.064 Matom-step/s
+90.8% CPU use with 1 MPI tasks x no OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 14.651     | 14.651     | 14.651     |   0.0 |  4.61
+Bond    | 0.080988   | 0.080988   | 0.080988   |   0.0 |  0.03
+Neigh   | 4.743      | 4.743      | 4.743      |   0.0 |  1.49
+Comm    | 3.1546     | 3.1546     | 3.1546     |   0.0 |  0.99
+Output  | 1.7209e-05 | 1.7209e-05 | 1.7209e-05 |   0.0 |  0.00
+Modify  | 286.4      | 286.4      | 286.4      |   0.0 | 90.08
+Other   |            | 8.924      |            |       |  2.81
+
+Nlocal:           1600 ave        1600 max        1600 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Nghost:              0 ave           0 max           0 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Neighs:            153 ave         153 max         153 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+
+Total # of neighbors = 153
+Ave neighs/atom = 0.095625
+Ave special neighs/atom = 0
+Neighbor list builds = 5893
+Dangerous builds = 0
+Total wall time: 0:05:17

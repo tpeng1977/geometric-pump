@@ -1,0 +1,11 @@
+--- Statistical Thermo-Ion Transport Analysis ---
+
+=== Magic Window (Funnel) Summary (N=4) ===
+Na+ Transfer: -10.25 ± 2.17
+Cl- Transfer: -8.00 ± 1.41
+Net Charge Separation (Cold Side): -2.25 ± 2.95e
+
+=== Cylinder (Control) Summary (N=4) ===
+Na+ Transfer: -8.00 ± 2.55
+Cl- Transfer: -9.00 ± 2.35
+Net Charge Separation (Cold Side): +1.00 ± 1.58e

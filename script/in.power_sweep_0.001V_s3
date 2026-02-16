@@ -1,0 +1,71 @@
+
+# Power Sweep: Acetic Acid (Statistical Run)
+# Voltage: 0.001 V, Seed: 45678
+units real
+atom_style full
+boundary p p f
+pair_style lj/cut/coul/cut 12.0 12.0
+dielectric 78.0
+
+lattice fcc 4.0
+region entire block -200 200 -200 200 -600 600 units box
+create_box 2 entire
+mass 1 1.008
+mass 2 59.04
+
+# Geometry
+region l_res block -160 160 -160 160 -500 -45 units box
+region r_res block -160 160 -160 160 45 500 units box
+region pore cone z 0 0 100 4.5 -60 60 units box
+region allowed union 3 l_res r_res pore
+fix reflect all wall/reflect zlo -550 zhi 550
+
+# Init
+region spawn_l block -40 40 -40 40 -300 -200 units box
+region spawn_r block -40 40 -40 40 200 300 units box
+create_atoms 1 random 400 45678 spawn_l
+create_atoms 2 random 400 45679 spawn_l
+create_atoms 1 random 400 45680 spawn_r
+create_atoms 2 random 400 45681 spawn_r
+
+group proton type 1
+group acetate type 2
+group mobile union proton acetate
+
+set type 1 charge 1.0
+set type 2 charge -1.0
+
+pair_coeff 1 1 0.1 2.0
+pair_coeff 1 2 0.1 4.5
+pair_coeff 2 2 0.1 7.0
+
+fix w_all mobile wall/region allowed lj126 1000.0 1.0 1.12
+
+# Dynamics Init
+velocity all create 350.0 45682
+neighbor 2.0 bin
+neigh_modify delay 0 every 1 check yes
+delete_atoms overlap 2.0 mobile all
+minimize 1.0e-4 1.0e-6 1000 10000
+
+# Apply Load Field
+variable e_mag equal -1.0*0.001/1000.0
+fix load_field all efield 0.0 0.0 v_e_mag
+
+fix lang_mobile mobile langevin 350.0 350.0 100.0 45801
+fix 1 mobile nve
+
+# Measurement
+region track_l block -150 150 -150 150 -450 -100 units box
+region track_r block -150 150 -150 150 100 450 units box
+
+variable nhl equal count(proton,track_l)
+variable nal equal count(acetate,track_l)
+variable nhr equal count(proton,track_r)
+variable nar equal count(acetate,track_r)
+
+# Output
+fix ave_n mobile ave/time 1 1 10000 v_nhl v_nal v_nhr v_nar file results/data.power_sweep_0.001V_s3.dat
+
+timestep 0.1
+run 200000

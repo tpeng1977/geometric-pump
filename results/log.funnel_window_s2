@@ -1,0 +1,90 @@
+LAMMPS (22 Jul 2025 - Update 3)
+Lattice spacing in x,y,z = 4 4 4
+Created orthogonal box = (-200 -200 -600) to (200 200 600)
+  1 by 1 by 1 MPI processor grid
+Created 400 atoms
+  using lattice units in orthogonal box = (-200 -200 -600) to (200 200 600)
+  create_atoms CPU = 0.001 seconds
+Created 400 atoms
+  using lattice units in orthogonal box = (-200 -200 -600) to (200 200 600)
+  create_atoms CPU = 0.000 seconds
+Created 400 atoms
+  using lattice units in orthogonal box = (-200 -200 -600) to (200 200 600)
+  create_atoms CPU = 0.000 seconds
+Created 400 atoms
+  using lattice units in orthogonal box = (-200 -200 -600) to (200 200 600)
+  create_atoms CPU = 0.000 seconds
+800 atoms in group na_type
+800 atoms in group cl_type
+800 atoms in group hot_atoms
+800 atoms in group cold_atoms
+Setting atom values ...
+  800 settings made for charge
+Setting atom values ...
+  800 settings made for charge
+Generated 0 of 1 mixed pair_coeff terms from geometric mixing rule
+Neighbor list info ...
+  update: every = 1 steps, delay = 0 steps, check = yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 12
+  ghost atom cutoff = 12
+  binsize = 6, bins = 67 67 200
+  1 neighbor lists, perpetual/occasional/extra = 1 0 0
+  (1) pair lj/cut/coul/cut, perpetual
+      attributes: half, newton on
+      pair build: half/bin/newton
+      stencil: half/bin/3d
+      bin: standard
+Setting up cg style minimization ...
+  Unit style    : real
+  Current step  : 0
+Per MPI rank memory allocation (min/avg/max) = 11.26 | 11.26 | 11.26 Mbytes
+   Step          Temp          E_pair         E_mol          TotEng         Press     
+         0   300            768233.62      0              769663.52      1098.1942    
+        53   300           -36.570694      0              1393.3239      0.33849917   
+Loop time of 0.0144652 on 1 procs for 53 steps with 1600 atoms
+
+94.0% CPU use with 1 MPI tasks x no OpenMP threads
+
+Minimization stats:
+  Stopping criterion = energy tolerance
+  Energy initial, next-to-last, final = 
+      768233.624003221  -36.5681520047724  -36.5706939048134
+  Force two-norm initial, final = 14514665 1.4786441
+  Force max component initial, final = 9896667.7 0.33610964
+  Final line search alpha, max atom move = 0.0011625845 0.00039075585
+  Iterations, force evaluations = 53 82
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 0.00069262 | 0.00069262 | 0.00069262 |   0.0 |  4.79
+Bond    | 3.334e-06  | 3.334e-06  | 3.334e-06  |   0.0 |  0.02
+Neigh   | 0.0029859  | 0.0029859  | 0.0029859  |   0.0 | 20.64
+Comm    | 6.0995e-05 | 6.0995e-05 | 6.0995e-05 |   0.0 |  0.42
+Output  | 0          | 0          | 0          |   0.0 |  0.00
+Modify  | 0.0064864  | 0.0064864  | 0.0064864  |   0.0 | 44.84
+Other   |            | 0.004236   |            |       | 29.28
+
+Nlocal:           1600 ave        1600 max        1600 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Nghost:              0 ave           0 max           0 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Neighs:            164 ave         164 max         164 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+
+Total # of neighbors = 164
+Ave neighs/atom = 0.1025
+Ave special neighs/atom = 0
+Neighbor list builds = 3
+Dangerous builds = 0
+Generated 0 of 1 mixed pair_coeff terms from geometric mixing rule
+Setting up Verlet run ...
+  Unit style    : real
+  Current step  : 53
+  Time step     : 0.25
+Per MPI rank memory allocation (min/avg/max) = 10.14 | 10.14 | 10.14 Mbytes
+   Step          Temp          E_pair         E_mol          TotEng         Press     
+        53   300           -36.570694      0              1393.3239      0.33849917   
+ERROR: Lost atoms: original 1600 current 1599
+For more information see https://docs.lammps.org/err0008 (src/thermo.cpp:526)
