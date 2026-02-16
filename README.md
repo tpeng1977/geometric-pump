@@ -1,6 +1,8 @@
 # geometric-pump
 https://github.com/tpeng1977/geometric-pump.git
 
+
+Created by Ting Peng(t.peng@ieee.org) at highway school of Chang'an University.
 **Suggested GitHub repo name:** `geometric-pump`
 
 Repository for the paper: *Stochastic Thermodynamics and the Falsification of Monotonic Entropy Increase: A Formal Paradox and Empirical Correction* (arXiv).
