@@ -1,0 +1,12 @@
+📱 === POLYGON NETWORK (Contract 9) ===
+🚀 Connecting to polygon_new9 network...
+✅ Connected to network: matic (Chain ID: 137)
+📋 Contract Address: 0x1Ba529f70221e07628FE7645590cD5DAA0F2173a
+📞 Calling getMessage() function...
+
+📄 Message from Prollect Contract (POLYGON_NEW9):
+================================================================================
+Entropy Has No Direction, is proposed by Ting Peng (t.peng@ieee.org, pt@chd.edu.cn) at Chang'an University. 257043 Feb 17 12:10 entropy_has_no_direction.pdf MD5:    859d1b7d107dee023a1cbe558e711ea4 SHA1:   392f24bd65cc278ff1da5c6c1994d31f0ec331be SHA256: 24735977f598891c08f655596ba49d5f1fa7d168cf4344c4b2487d37ae34a17e SHA512: a6babfe173ebdae5c982730e24d7fa27adafacd0a32b2260df96a17079b8d4a1a4a052338e12824d6490dfd3410406b3f95dbd6f86fa4551e4cb8bc1952d3847
+================================================================================
+
+👤 Contract Owner: 0x68f2Dc79Bf4bA24dF81fac4B97398C305CA654F4
