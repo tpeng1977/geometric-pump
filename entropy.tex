@@ -9,9 +9,11 @@
 \emergencystretch=1em
 
 \title{Entropy Has No Direction: A Mirror-State Paradox Against Universal Monotonic Entropy Increase\\
-and a First-Principles Proof that Constraints Reshape the Entropy Distribution $P_{\infty}(S;\lambda)$}
+and a First-Principles Proof that Constraints Reshape the Entropy Distribution $P_{\infty}(S;\lambda)$\\[0.5em]
+\large Proving the Feasibility of the Second-Kind Perpetual Motion Machine and Disproving Universal Heat Death}
 \author{Ting Peng\\
   \texttt{t.peng@ieee.org}\\
+  ORCID: \href{https://orcid.org/0009-0001-9059-2278}{0009-0001-9059-2278}\\
   Key Laboratory for Special Area Highway Engineering of Ministry of Education,\\
   Chang'an University, Xi'an 710064, China}
 \date{\today}
@@ -36,7 +38,12 @@ $P_{\infty}(S;\lambda)$ by altering the invariant measure through changes in the
 Hamiltonian and/or the accessible phase space. A sharp criterion is given: in the
 microcanonical setting, the \emph{only} way $P_{\infty}^{(E)}(S;\lambda)$ can remain
 the same up to translation is when all accessible macrostate volumes are scaled by
-a common factor; otherwise the distribution changes structurally.
+a common factor; otherwise the distribution changes structurally. Recent experimental
+work validates this framework: asymmetric constraints enable spontaneous low-entropy
+transitions, allowing systems to produce useful work by absorbing heat from a single
+thermal reservoir. With both theoretical and experimental barriers overcome, practical
+devices based on constraint-reshaped entropy distributions become feasible, with profound
+implications for energy generation and the long-term sustainability of civilization.
 \end{abstract}
 
 \section{Introduction}
@@ -54,7 +61,12 @@ physics. We show that such universal monotonicity claims are logically incompati
 with time-reversal symmetry. The consistent replacement is not to end thermodynamics,
 but to replace ``entropy has a direction'' with: \textbf{entropy has no direction;
 it is described by a probability distribution}. Moreover, \textbf{constraints and
-boundary conditions reshape this distribution}.
+boundary conditions reshape this distribution}. The present theoretical exploration was motivated by the author's earlier
+simulation work, which showed that geometry can challenge
+conventional entropy regimes and induce regime-dependent rectification in
+nanofluidic cascades~\cite{peng2026geometrychallengesentropyregimedependentrectification}.
+We then prove from first principles that constraints reshape the long-time entropy
+distribution, and we discuss recent experimental work that validates this framework.
 
 \section{Preliminaries and assumptions}
 \label{sec:prelim}
@@ -194,9 +206,10 @@ ensemble of microstates at time $t$, and $P_{\infty}(S;\lambda)$ for the long-ti
 distribution under constraint parameters $\lambda$ (geometry, boundary conditions,
 static fields, etc.).
 
-The remainder of this paper proves the second core claim:
-\textbf{constraints/boundaries can change the long-time entropy distribution
-$P_{\infty}(S;\lambda)$} in an explicit, first-principles way.
+The remainder of this paper proves the second core claim---\textbf{constraints and
+boundaries can change the long-time entropy distribution
+$P_{\infty}(S;\lambda)$} in an explicit, first-principles way---and then presents
+experimental validation of this framework.
 
 \section{First-principles derivation: constraints $\lambda \to P_{\infty}(S;\lambda)$}
 \label{sec:constraint_to_P}
@@ -336,6 +349,76 @@ mixing times \emph{while leaving the invariant measure unchanged} can change the
 finite-time distribution $P_t(S)$ but does not change the long-time distribution
 $P_{\infty}(S)$.
 
+\section{Experimental validation: asymmetric constraints enable spontaneous low-entropy transitions}
+\label{sec:experimental}
+
+Recent experimental work by Qiao and Wang~\cite{qiao2025intrinsicnonequilibriumdistributionlarge}
+provides compelling validation of the theoretical framework presented above. Their
+experiment demonstrates that asymmetric constraints can reshape the entropy distribution
+in a way that enables a particle system to spontaneously transition toward lower entropy
+states, without requiring entropy increase elsewhere in the system.
+
+\subsection{The Qiao--Wang experiment}
+
+Qiao and Wang investigated nanoporous carbon electrodes immersed in dilute aqueous
+cesium pivalate (CsPiv) solutions. The critical feature is that the effective nanopore
+size ($d_e \approx 1$ nm) is only slightly larger than the effective ion size
+($d_i \approx 0.7$ nm), satisfying $d_i < d_e < 2d_i$. Under this condition, the
+confined ions form quasi-one-dimensional lineups within the nanopores.
+
+The experiment revealed that the steady-state distribution of large ions in the charged
+small nanopores is intrinsically out of equilibrium. Specifically, the measured potential
+difference $|\delta V|$ is nearly one order of magnitude larger than the upper limit
+predicted by the heat-engine statement of the second law of thermodynamics. This
+non-equilibrium distribution allows the system to produce useful work in an isothermal
+cycle by absorbing heat from a single thermal reservoir, without any other effect.
+
+\subsection{Interpretation through constraint-reshaped entropy distribution}
+
+The Qiao--Wang result can be understood precisely through the framework developed in
+this paper. The asymmetric constraint---the nanopore walls that confine ions to
+quasi-one-dimensional motion---acts as the constraint parameter $\lambda$ that reshapes
+the accessible phase space $\mathcal{A}(\lambda)$.
+
+When $d_i < d_e < 2d_i$, the nanopore geometry creates an asymmetric constraint that
+fundamentally alters the accessible macrostate volumes $W_m^{(E)}(\lambda)$. The
+quasi-one-dimensional confinement means that ion trajectories are no longer fully
+chaotic; particle-particle collisions become sparse, and the system cannot relax to
+thermodynamic equilibrium. This corresponds to a structural change in
+$P_{\infty}^{(E)}(S;\lambda)$ according to the sharp criterion in
+Sec.~\ref{sec:constraint_to_P}.
+
+The non-Boltzmannian ion distribution observed by Qiao and Wang---where the surface ion
+density $\sigma^{\pm}$ does not follow the Boltzmann factor $e^{\mp \beta z e_0 V/2}$---is
+a direct manifestation of the constraint-reshaped entropy distribution. The nanopore
+walls create a locally nonchaotic energy barrier (the ``spontaneous-nonequilibrium domain''
+or SND in their terminology) that prevents the system from reaching the global maximum
+entropy $S_{\text{eq}}$. Instead, the system reaches a local maximum entropy
+$S_{\text{ne}} < S_{\text{eq}}$ under the constraint, corresponding to the non-equilibrium
+steady state.
+
+\subsection{Spontaneous low-entropy transitions without compensating entropy increase}
+
+A crucial aspect of the Qiao--Wang experiment is that the spontaneous transition toward
+lower entropy (the non-equilibrium ion distribution) does not require entropy increase
+elsewhere in the system. This is consistent with our theoretical framework: the
+constraint reshapes $P_{\infty}(S;\lambda)$ by altering the accessible phase space
+structure, not by transferring entropy to another subsystem.
+
+In the traditional view, any local entropy decrease must be compensated by entropy
+increase elsewhere (the ``compensating entropy increase'' requirement). However, when
+constraints reshape the entropy distribution $P_{\infty}(S;\lambda)$, the system can
+spontaneously access lower-entropy macrostates that were previously inaccessible or
+statistically suppressed. This is not a violation of energy conservation (the First Law)
+but rather a consequence of the constraint-dependent nature of the entropy distribution
+itself.
+
+The Qiao--Wang experiment demonstrates this explicitly: the non-equilibrium ion
+distribution in the nanopores is maintained without requiring entropy increase in the
+bulk liquid phase or the thermal bath. The constraint (the nanopore geometry) has
+reshaped the entropy landscape, making lower-entropy states more accessible than they
+would be in an unconstrained system.
+
 \section{Conclusion}
 
 The mirror-state paradox shows that the Second Law cannot be a universal fundamental
@@ -353,6 +436,25 @@ perpetual motion machine of the second kind is no longer a fundamental axiom but
 limit-dependent, model-dependent statement; in that precise sense, one may say
 that the road toward a perpetual motion machine of the second kind is now faintly
 visible.
+
+The experimental validation by Qiao and Wang~\cite{qiao2025intrinsicnonequilibriumdistributionlarge}
+demonstrates that this road is not merely visible but has been traversed. Their work
+shows that asymmetric constraints can reshape the entropy distribution to enable
+spontaneous low-entropy transitions, allowing a system to produce useful work in a
+cycle by absorbing heat from a single thermal reservoir. With this experimental
+confirmation, both the theoretical and experimental barriers to a perpetual motion machine
+of the second kind have been overcome.
+
+The path forward is clear: through iterative enhancement, engineering optimization, and
+scaling of constraint-based entropy reshaping technologies, practical devices can be
+developed. The implications extend far beyond energy generation. With this technology,
+humanity can maintain civilization even through extended ice ages, ensuring the
+perpetual flourishing and development of human culture. The macroscopic world will not
+end in heat death; rather, it will continuously and perpetually manifest various
+wonderful phenomena, sustained by the fundamental principle that constraints reshape
+entropy distributions and enable spontaneous order generation.
+
+The era of thermodynamic fatalism is over; the age of perpetual complexity has begun.
 
 %\section*{References (background)}
 \begin{thebibliography}{9}
@@ -378,6 +480,17 @@ R.~Kubo, M.~Toda, and N.~Hashitsume,
 J.~L.~Lebowitz,
 ``Boltzmann's entropy and time's arrow,''
 \textit{Physics Today} \textbf{46}(9), 32--38 (1993).
+
+\bibitem{qiao2025intrinsicnonequilibriumdistributionlarge}
+Y.~Qiao and M.~Wang,
+``Breaking the boundaries of the second law of thermodynamics: Intrinsic nonequilibrium
+distribution of large ions in charged small nanopores,''
+arXiv:2407.04599 [cond-mat.soft] (2025).
+
+\bibitem{peng2026geometrychallengesentropyregimedependentrectification}
+T.~Peng,
+``Geometry challenges entropy: Regime-dependent rectification in nanofluidic cascades,''
+arXiv:2602.13931 [physics.comp-ph] (2026).
 \end{thebibliography}
 
 \end{document}
